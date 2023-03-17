@@ -1,0 +1,236 @@
+@import "vars.css";
+
+body{
+	background-image: url('../imgs/fundo.png');
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	backdrop-filter: blur(1px) contrast(118%) saturate(44%) hue-rotate(8deg);
+	background-attachment: fixed;
+}
+.irTop{
+	background-image: url("../imgs/pagetop.png");
+	position: absolute;
+	z-index: 10;
+	width: 17vh;
+	height: 17vh;
+	background-position: center;
+	background-size: 14vh;
+	background-repeat: no-repeat;
+	margin: 76vh 0vw 0vh 80vw;
+	border-radius: 8vw;
+	background-color: var(--corE);
+	box-shadow: 0px 0px 23px var(--corE);
+	border: none;
+}
+	.irTop:hover{
+		cursor: pointer;
+		filter: contrast(150%) saturate(150%);
+	}
+	.sistem{
+	    overflow-y: overlay;
+	    width: 100vw;
+	    height: 100vh;
+	}
+	.topo{
+		background-color: var(--corC);
+		width: 100vw;
+		padding: 3vh 0vw 0vh 0vw;
+		display: flex;
+		flex-direction: column;
+		height: 6vh;
+		border-bottom: 2px solid var(--corE);
+		align-items: center;
+	}
+		.head{
+			background-color: var(--Invisible);
+			height: 10vh;
+			display: flex;
+			flex-direction: row;
+			justify-content: space-around;
+			align-items: center;
+			width: 98vw;
+		}
+			.head .icon{
+				background-color: var(--Invisible);
+				color: var(--corE);
+				font-size: 4vh;
+			}
+				.head .icon:hover{
+					cursor: pointer;
+				}
+			.login{
+				background-color: var(--Invisible);
+				display: flex;
+				flex-direction: row;
+				width: 19vw;
+				justify-content: space-around;
+				align-items: center;
+				height: 100%;
+			}
+				.login .btn{
+					background-color: var(--corD);
+					border: none;
+					border-radius: 2px;
+					padding: 1vh;
+					font-family: "Dbfont";
+					font-size: 3vh;
+					color: var(--corC);
+					box-shadow: 0px 0px 5px var(--corD);
+				}
+					.login .btn:hover{
+						cursor: pointer;
+						border: 2px solid var(--corE);
+					}
+					.login .ent{
+						background-color: var(--corB);
+						box-shadow: 0px 0px 5px var(--corB);
+					}
+		.menu{
+			z-index: 2;
+			margin-top: 1vh;
+			width: 86vw;
+			background: var(--corC);
+			padding: 2vh;
+			border-radius: 0px 0px 2vw 2vw;
+			border: 2px solid var(--corE);
+			justify-content: space-around;
+		}
+			.menu .menuA{
+				text-decoration: none;
+				font-family: 'DbFont';
+				color: var(--corD);
+				font-size: 4vh;
+			}
+				.menu .menuA .linkA{
+					color: var(--corE);
+				}
+				.menu .menuA:hover{
+					border-bottom: 4px solid var(--corE);
+					padding: 0vh 1vw 0vh 1vw;
+				}
+	.meio{
+		width: 99vw;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		z-index: 2;
+	}
+		.meio .div{
+			width: 100vw;
+			height: 61vh;
+			display: flex;
+			flex-direction: row;
+			justify-content: space-around;
+			align-items: center;
+			background-image: url("../imgs/poster.png");
+			background-size: 69vh;
+			background-repeat: no-repeat;
+			background-position: 63vw -6vh;
+			background-color: rgb(0 0 0 / 62%);
+			border-bottom: 3px solid var(--corB);
+		}
+			.meio .div .palagrafy{
+				background-color: var(--Invisible);
+				width: 37vw;
+				height: 35vh;
+				display: flex;
+				flex-direction: column;
+				justify-content: space-around;
+				align-items: center;
+			}
+				.meio .div .palagrafy .textDiv{
+					background-color: var(--Invisible);
+					color: var(--corE);
+					font-family: 'DbFont';
+					font-size: 6vh;
+					width: 90%;
+					height: 70%;
+					word-wrap: break-word;
+				}
+				.meio .div .palagrafy .btn{
+					background-color: var(--corD);
+					border: none;
+					border-radius: 2px;
+					padding: 1vh;
+					font-family: "Dbfont";
+					font-size: 4vh;
+					color: var(--corC);
+					box-shadow: 0px 0px 5px var(--corD);
+					width: 31vw;
+				}
+					.meio .div .palagrafy .btn:hover{
+						cursor: pointer;
+						border: 2px solid var(--corB);
+					}
+			.meio .div .bar{
+				background-color: var(--corB);
+				width: 0.5vw;
+				height: 100%;
+				margin: 0vh 28vw 0vh 0vw;
+				box-shadow: 0px 0px 4px 0px var(--corB);
+			}
+		.meio .divA{
+			width: 100vw;
+			height: 65vh;
+			display: flex;
+			flex-direction: row;
+			justify-content: space-around;
+			align-items: center;
+			border-bottom: 3px solid var(--corB);
+		}
+			.meio .divA .card{
+				background-color: white;
+				width: 30vh;
+				height: 28vh;
+				border-radius: 6px;
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+			}
+				.meio .divA .card .imgCard{
+					background-position: center;
+					background-size: contain;
+					background-repeat: no-repeat;
+					width: 11vw;
+					height: 24vh;
+					margin-top: -25vh;
+				}
+					.meio .divA .card:hover .imgCard{
+						cursor: grab;
+						height: 26vh;
+						width: 15vw;
+					}
+				.meio .divA .card .pCard{
+					background-color: var(--Invisible);
+					color: var(--corC);
+					font-family: Comic Sans MS;
+					font-size: 3vh;
+					font-weight: bold;
+					width: 78%;
+					height: 35%;
+					cursor: default;
+				}
+					.meio .divA .card:hover .pCard{
+						cursor: grab;
+					}
+		.meio .divB{
+			background-color: var(--corB);
+			width: 100vw;
+			height: 51vh;
+			display: flex;
+			flex-direction: row;
+			justify-content: center;
+			align-items: center;
+		}
+			.meio .divB .textDivMain{
+				background-color: var(--Invisible);
+				width: 80vw;
+				height: 42vh;
+				text-align: center;
+				font-family: 'DbFont';
+				color: white;
+				font-size: 6vh;
+				word-wrap: break-word;
+			}

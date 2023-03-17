@@ -1,5 +1,5 @@
-CREATE DATABASE estacionamento;
-USE estacionamento;
+CREATE DATABASE db_estacionamento;
+USE db_estacionamento;
 
 CREATE TABLE user(
 	cd_user INT PRIMARY KEY NOT NULL,
@@ -29,11 +29,17 @@ CREATE TABLE estas_vag(
 	cd_vag INT PRIMARY KEY NOT NULL,
 	ps_X INT,
 	ps_Y INT,
-	vl_preco MONEY,
+	vl_preco DECIMAL(65, 2),
 	id_tipo INT,
-	FOREIGN KEY (id_tipo) REFERENCES tipos(cd_tipo)
+	FOREIGN KEY (id_tipo) REFERENCES tipos(cd_tipo),
+	id_esta INT,
+	FOREIGN KEY (id_esta) REFERENCES estas(cd_estas)
 );
 
-CREATE TABLE uservag(
-
+CREATE TABLE user_vag(
+	cd_vgUser INT PRIMARY KEY NOT NULL,
+	id_vaga INT,
+	FOREIGN KEY (id_vaga) REFERENCES estas_vag(cd_vag),
+	id_user INT,
+	FOREIGN KEY (id_user) REFERENCES user(cd_user)
 );
