@@ -20,8 +20,8 @@ body{
 	margin: 76vh 0vw 0vh 80vw;
 	border-radius: 8vw;
 	background-color: var(--corE);
-	box-shadow: 0px 0px 23px var(--corE);
 	border: none;
+	animation: 1.5s nave linear infinite alternate-reverse backwards;
 }
 	.irTop:hover{
 		cursor: pointer;
@@ -76,7 +76,6 @@ body{
 					font-family: "Dbfont";
 					font-size: 3vh;
 					color: var(--corC);
-					box-shadow: 0px 0px 5px var(--corD);
 				}
 					.login .btn:hover{
 						cursor: pointer;
@@ -84,7 +83,6 @@ body{
 					}
 					.login .ent{
 						background-color: var(--corB);
-						box-shadow: 0px 0px 5px var(--corB);
 					}
 		.menu{
 			z-index: 2;
@@ -124,7 +122,7 @@ body{
 			justify-content: space-around;
 			align-items: center;
 			background-image: url("../imgs/poster.png");
-			background-size: 69vh;
+			background-size: 39vw 69vh;
 			background-repeat: no-repeat;
 			background-position: 63vw -6vh;
 			background-color: rgb(0 0 0 / 62%);
@@ -156,7 +154,6 @@ body{
 					font-family: "Dbfont";
 					font-size: 4vh;
 					color: var(--corC);
-					box-shadow: 0px 0px 5px var(--corD);
 					width: 31vw;
 				}
 					.meio .div .palagrafy .btn:hover{
@@ -183,11 +180,12 @@ body{
 				background-color: white;
 				width: 30vh;
 				height: 28vh;
-				border-radius: 6px;
 				display: flex;
 				flex-direction: column;
 				justify-content: center;
 				align-items: center;
+				border-radius: 8px;
+				border: 2px solid;
 			}
 				.meio .divA .card .imgCard{
 					background-position: center;
@@ -234,3 +232,158 @@ body{
 				font-size: 6vh;
 				word-wrap: break-word;
 			}
+	.pe{
+		display: flex;
+		height: 36vh;
+		width: 100vw;
+		background-color: var(--corC);
+		border-top: 4px solid var(--corE);
+		flex-direction: row;
+		justify-content: space-around;
+		align-items: center;
+	}
+		.pe .caution{
+			display: flex;
+			width: 63vw;
+			height: 28vh;
+			flex-direction: column;
+			justify-content: space-between;
+			align-items: flex-start;
+		}
+			.logCaution{
+				width: 22vw;
+				margin-left: 6vw;
+			}
+			.pCaution{
+				display: flex;
+				width: 63vw;
+				height: 3vh;
+				flex-direction: row;
+				color: var(--corE);
+				font-family: cursive;
+				font-weight: bold;
+				font-size: 2vh;
+			}
+				.pCaution label{
+					margin-left: 1vw;
+				}
+		.pe .privacy{
+			display: flex;
+			width: 33vw;
+			height: 24vh;
+			flex-direction: row;
+			align-items: flex-start;
+			justify-content: space-around;
+		}
+			.pe .privacy .txA{
+				color: var(--corA);
+				font-family: cursive;
+				font-weight: bold;
+				text-decoration: none;
+			}
+				.pe .privacy .txA:hover{
+					cursor: pointer;
+					border-bottom: 2px solid var(--corA);
+				}
+.modal{
+	display: none;
+	width: 49vw;
+	height: 76vh;
+	position: absolute;
+	background-color: white;
+	z-index: 11;
+	margin-top: 10vh;
+	border-radius: 7px;
+	border: 4px solid var(--corC);
+	box-shadow: 0px 0px 50vw 5vw;
+	animation: 0.5s modal linear;
+	flex-direction: column;
+	align-items: center;
+}
+	.modal img{
+		width: 28vw;
+		height: 80vh;
+		position: absolute;
+		margin: 7vh 53vw 0vh 0vw;
+		z-index: 15;
+		filter: drop-shadow(10px -14px 6px var(--corB)) saturate(60%);
+	}
+	.modal .bar{
+		width: 2vw;
+		height: 20vh;
+		background-color: white;
+		margin-top: -17vh;
+		rotate: 341deg;
+		margin-left: -28vw;
+		border: 4px solid var(--corC);
+		border-bottom: none;
+	}
+	.iconMdl{
+		color: var(--corC);
+		font-size: 5vh;
+		background-color: white;
+		border: 4px solid;
+		padding: 2vh 2vw;
+		border-radius: 4vw;
+		position: absolute;
+		margin: -5vh 0vw 0vh 47vw;
+	}
+		.iconMdl:hover{
+			cursor: pointer;
+			padding: 3vh 3vw;
+		}
+	.btnsMdl{
+		display: flex;
+		width: 30vw;
+		height: 7vh;
+		margin-top: 5vh;
+		justify-content: space-between;
+		align-items: center;
+	}
+		.btnMdl{
+			width: 14vw;
+			background-color: var(--corC);
+			border: none;
+			border-radius: 2px;
+			padding: 1vh;
+			font-family: "Dbfont";
+			font-size: 3vh;
+			color: white;
+		}
+			.btnMdl:hover{
+				cursor: pointer;
+				box-shadow: 4px 4px 1px 0px var(--corB);
+			}
+	.forms{
+		display: flex;
+	}
+		.criar{
+			display: none;
+		}
+		.entrar{
+			display: none;
+		}
+
+@keyframes nave{
+	0%{
+		rotate: 0deg;
+		margin-top: 76vh;
+	}
+	50%{
+		rotate: -10deg;
+		margin-top: 77vh;
+	}
+	100%{
+		rotate: 10deg;
+		margin-top: 75vh;
+	}
+}
+
+@keyframes modal{
+	0%{
+		margin-top: -76vh;
+	}
+	100%{
+		margin-top: 10vh;
+	}
+}

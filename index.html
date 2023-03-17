@@ -10,14 +10,31 @@
 	<title>Dragon Ball Super: Broly</title>
 </head>
 <body>
+	<div class="modal" id="modal">
+		<img src="imgs/goku.png">
+		<div class="bar"></div>
+		<i class="fa-solid fa-xmark iconMdl" onclick="Modal('#modal', '#frm1', 1)"></i>
+		<div class="btnsMdl">
+			<button class="btnMdl">Criar Conta</button>
+			<button class="btnMdl">Entrar</button>
+		</div>
+		<div class="forms">
+			<form class="criar" id="frm1">
+				a
+			</form>
+			<form class="entrar" id="frm2">
+				b
+			</form>
+		</div>
+	</div>
 	<button onclick="subir()" class="irTop"></button>
 	<div class="sistem" id="sistem">
 		<header class="topo">
 			<div class="head">
 				<i class="fa-solid fa-bars icon" onclick="iconMod(this, '#menu', 0)"></i>
 				<div class="login">
-					<button class="btn">Criar Conta</button>
-					<button class="btn ent">Entrar</button>
+					<button class="btn" onclick="Modal('#modal', '#frm1', 0)">Criar Conta</button>
+					<button class="btn ent" onclick="Modal('#modal', '#frm2', 0)">Entrar</button>
 				</div>
 			</div>
 			<div class="menu ocultar" id="menu">
@@ -32,7 +49,7 @@
 			<div class="div">
 				<div class="palagrafy">
 					<p class="textDiv">Venha ver o filme Dragon Ball Super Broly no Estacionamento do jacandira </p>
-					<button class="btn">Criar Conta para Comprar vaga</button>
+					<button class="btn" onclick="Modal('#modal', '#frm1', 0)">Criar Conta para Comprar vaga</button>
 				</div>
 				<div class="bar"></div>
 			</div>
@@ -59,7 +76,7 @@
 				</div>
 			</div>
 			<div class="divB">
-				<p class="textDivMain">Sinopse do filme<br>Apesar da Terra estar em um periodo de calmaria, Goku se recusa a parar de treinar constantemente. O que ele nao imaginava era que seu novo inimigo seria Broly, um poderoso super saiyajin sedento por vinganca, que deseja destruir todos que encontrar pela frente</p>
+				<p class="textDivMain">Sinopse do filme<br>Apesar da Terra estar em um periodo de calmaria Goku se recusa a parar de treinar constantemente. O que ele nao imaginava era que seu novo inimigo seria Broly um poderoso super saiyajin sedento por vinganca que deseja destruir todos que encontrar pela frente</p>
 			</div>
 		</main>
 
@@ -68,11 +85,9 @@
 				<img class="logCaution" src="imgs/shueisha.png">
 				<img class="logCaution" src="imgs/bandai.png">
 				<p class="pCaution">
-					©BIRD STUDIO/SHUEISHA
-					<br>
-					©BIRD STUDIO, Toyotarou/SHUEISHA
-					<br>
-					©BIRD STUDIO/SHUEISHA, TOEI ANIMATION
+					<label>©BIRD STUDIO/SHUEISHA</label>
+					<label>©BIRD STUDIO, Toyotarou/SHUEISHA</label>
+					<label>©BIRD STUDIO/SHUEISHA, TOEI ANIMATION</label>
 				</p>
 			</div>
 			<div class="privacy">
