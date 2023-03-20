@@ -21,8 +21,8 @@ function Modal(modal, form, fun){
 		document.querySelector(form)
 	];
 	if(fun==1){
-		let frml = form=='#frm1'? '#frm2':'#frm1';
-		let div document.querySelector(frm);
+		let frml = form == '#frm1'? '#frm2':'#frm1';
+		let div = document.querySelector(frml);
 		div.style.display = 'none';
 		divs[0].style.display = 'none';
 		divs[1].style.display = 'none';

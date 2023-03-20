@@ -19,11 +19,49 @@
 			<button class="btnMdl">Entrar</button>
 		</div>
 		<div class="forms">
-			<form class="criar" id="frm1">
-				a
+			<form class="criar" id="frm1" method="post" enctype="multipart/form-data">
+				<div class="fotoPerfilInput">
+					<div class="imgMostragem"></div>
+					<label for="InputImgEnv">Enviar Foto</label>
+					<input type="file" name="foto" id="InputImgEnv">
+				</div>
+				<div class="IntputsTexts">
+					<div class="InputTextIc">
+						<i class="fa-solid fa-user-pen iconInput"></i>
+						<input type="text" name="nick" class="InputText" placeholder="Nome Completo">		
+					</div>
+					<div class="InputTextIc">
+						<i class="fa-solid fa-key iconInput"></i>
+						<input type="password" name="senha" minlength="5" maxlength="25" class="InputText"  placeholder="Senha">
+						<input type="password" name="Confsenha" minlength="5" maxlength="25" class="InputText" placeholder="Confirmar senha">	
+					</div>
+					<div class="InputTextIc">
+						<i class="fa-solid fa-envelope iconInput"></i>
+						<input type="email" name="email" class="InputText" placeholder="Email">
+					</div>
+					<div class="InputTextIc">
+						<i class="fa-solid fa-phone iconInput"></i>
+						<input type="tel" name="telefone" pattern="[0-9]{2}_[0-9]{4}-[0-9]{4}" class="InputText" placeholder="Telefone">
+					</div>
+					<div class="InputTextIc">
+						<i class="fa-solid fa-map iconInput"></i>
+						<input type="text" name="endereso" class="InputText" placeholder="endereço">
+					</div>
+					<div class="InputTextIc">
+						<i class="fa-solid fa-credit-card iconInput"></i>
+						<input type="password" name="cartao" class="InputText" placeholder="Número do cartão" minlength="13" maxlength="16">
+						<input type="password" name="Confcartao" class="InputText" placeholder="Número do cartão" minlength="13" maxlength="16">
+					</div>
+					<div class="InputTextIc">
+						<i class="fa-solid fa-calendar iconInput"></i>
+						<input type="date" name="nacismento" class="InputText">
+					</div>
+				</div>
+				<button class="btnVerificForm" onclick="">Verificar dados</button>
+				<input type="submit" name="UpdateUser" class="submitInputUpdateUser" value="Criar">
 			</form>
-			<form class="entrar" id="frm2">
-				b
+			<form class="entrar" id="frm2" method="post" enctype="multipart/form-data">
+				
 			</form>
 		</div>
 	</div>

@@ -4,10 +4,12 @@ USE db_estacionamento;
 CREATE TABLE user(
 	cd_user INT PRIMARY KEY NOT NULL,
 	nm_nome VARCHAR(1000),
+	em_mail VARCHAR(1000),
 	dt_nasc DATE,
 	des_endereco LONGTEXT,
 	nr_cartão INT,
 	sl_senha CHAR(100),
+	nr_tel CHAR(100),
 	sl_adm BOOLEAN
 );
 
