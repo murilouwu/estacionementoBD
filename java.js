@@ -31,3 +31,13 @@ function Modal(modal, form, fun){
 		divs[1].style.display = 'flex';
 	}
 }
+
+function formOpen(id, id2){
+	let frms = [
+		document.querySelector(id),
+		document.querySelector(id2)
+	];
+
+	frms[0].style.display = 'flex';
+	frms[1].style.display = 'none';
+}
