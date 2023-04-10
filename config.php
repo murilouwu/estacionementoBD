@@ -27,7 +27,7 @@ function CadUser($nm, $nmC, $mail, $date, $end, $pass, $tel, $img){
         $res = $GLOBALS['conn']->query($query);
         if($res){
             mensage('Cadastro realizado com sucesso! :), seja bem vindo '.$nm);
-            Login($nm, $pass);
+            return Login($nm, $pass);
         }else{
             mensage('Erro ao realizar cadastro ;-;, tente novamente!');
         }
@@ -55,7 +55,7 @@ function Login($nm, $pass){
     
     $rows = mysqli_num_rows($res);
     if($rows > 0){
-        $_SESSION['user'] = $res->fetch_object();
+        return $res->fetch_object();
         header('Location: index.php');
     }else{
         mensage('Nome de usuário/email e/ou senha inválidos!! Tente novamente.');

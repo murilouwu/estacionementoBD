@@ -200,6 +200,9 @@ body{
 						height: 26vh;
 						width: 15vw;
 					}
+					.meio .divA .card:active .imgCard{
+						cursor: grabbing;
+					}
 				.meio .divA .card .pCard{
 					background-color: var(--Invisible);
 					color: var(--corC);

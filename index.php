@@ -66,7 +66,7 @@
 					</div>
 					<input type="submit" name="VerLog" id="verLog" class="ocultar">
 				</form>
-				<button class="submitInputUser" onclick="">Entrar</button>
+				<button class="submitInputUser" onclick="LogVer()">Entrar</button>
 			</div>
 		</div>
 	</div>
@@ -197,14 +197,32 @@
 					verific[2]? '':'-Número de telefone invalido não segue o modelo\n',
 					verific[3]? '':'-'+VerData(dados[4],1)
 				];
-				let menFinal = verific[0]+verific[1]+verific[2]+verific[3];
+				let menFinal = mens[0]+mens[1]+mens[2]+mens[3];
 				alert(menFinal);
 			}else{
 				let btn = document.querySelector("#verCad");
 				btn.click();
 			}
 		}
+		function LogVer(){
+			let btn = document.querySelector("#verLog");
+			btn.click();
+		}
 	</script>
 <?php
 	footEcho();
+
+	if(isset($_POST['UpdateUser'])){
+		$dados = array(
+			$_POST['foto'],//0
+			$_POST['nickname'],//1
+			$_POST['nick'],//2
+			$_POST['senha'],//3
+			$_POST['email'],//4
+			$_POST['telefone'],//5
+			$_POST['endereso'],//6
+			$_POST['nacismento']//7
+		);
+		//$_SESSION['user'] = CadUser($dados[2], $dados[1], $dados[4], $dados[7], $dados[6], $dados[3], $dados[5], $dados[0])
+	}
 ?>
