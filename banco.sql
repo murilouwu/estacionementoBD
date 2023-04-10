@@ -4,7 +4,9 @@ USE db_estacionamento;
 CREATE TABLE user(
 	cd_user INT PRIMARY KEY NOT NULL,
 	nm_nome VARCHAR(1000),
-	em_mail VARCHAR(1000),
+	nm_name VARCHAR(1000), /*nome de usuario*/
+	mail_user VARCHAR(1000),
+	img LONGTEXT,
 	dt_nasc DATE,
 	des_endereco LONGTEXT,
 	nr_cartão INT,
