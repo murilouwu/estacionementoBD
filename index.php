@@ -18,6 +18,7 @@
 				</div>
 				<form class="IntputsTexts" method="post" enctype="multipart/form-data">
 					<input type="file" name="foto" id="InputImgEnv" accept="image/*">
+					<input type="file" name="fotoSub" accept="image/*" value="imgs/perfilNoImg.png">
 					<div class="InputTextIc">
 						<i class="fa-solid fa-circle-user iconInput"></i>
 						<input type="text" name="nickname" id="nickname" class="InputText" placeholder="Nome de usuario">		
@@ -224,13 +225,13 @@
 			$_POST['endereso'],//6
 			$_POST['nacismento']//7
 		);
-		$_SESSION['user'] = CadUser($dados[1], $dados[2], $dados[4], $dados[7], $dados[6], $dados[3], $dados[5], $link);
+		//$_SESSION['user'] = CadUser($dados[1], $dados[2], $dados[4], $dados[7], $dados[6], $dados[3], $dados[5], $link);
 	}
 	if(isset($_POST['VerLog'])){
 		$dados = array(
 			$_POST['logNick'],//0
 			$_POST['logSenha']//1
 		);
-		$_SESSION['user'] = Login($dados[0], $dados[1]);
+		//$_SESSION['user'] = Login($dados[0], $dados[1]);
 	}
 ?>

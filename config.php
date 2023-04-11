@@ -1,6 +1,6 @@
 <?php 
 session_start();
-$db = array(
+/*$db = array(
             'host'=>'localhost',
             'user'=>'root',
             'pass'=> '',
@@ -8,7 +8,7 @@ $db = array(
         );
 
 $conn = mysqli_connect($db['host'], $db['user'], $db['pass'], $db['nm']) or die ('Sem Conecção ao database');
-
+*/
 function mensage($txt){
     echo '<script>alert("'.$txt.'");</script>';
 }
