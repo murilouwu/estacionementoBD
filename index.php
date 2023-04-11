@@ -215,7 +215,7 @@
 
 	if(isset($_POST['UpdateUser'])){
 		$dados = array(
-			$_POST['foto'],//0
+			$_FILES['foto'],//0
 			$_POST['nickname'],//1 nome de usuario
 			$_POST['nick'],//2 nome completo
 			$_POST['senha'],//3
