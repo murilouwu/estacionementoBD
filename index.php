@@ -15,9 +15,9 @@
 				<div class="fotoPerfilInput">
 					<div class="imgMostragem" id="ImgMost" style="background-image: url('imgs/perfilNoImg.png');"></div>
 					<label for="InputImgEnv">Enviar Foto</label>
-					<input type="file" name="foto" id="InputImgEnv" accept="image/*">
 				</div>
 				<form class="IntputsTexts" method="post" enctype="multipart/form-data">
+					<input type="file" name="foto" id="InputImgEnv" accept="image/*">
 					<div class="InputTextIc">
 						<i class="fa-solid fa-circle-user iconInput"></i>
 						<input type="text" name="nickname" id="nickname" class="InputText" placeholder="Nome de usuario">		
@@ -58,11 +58,11 @@
 				<form class="IntputsTexts" method="post" enctype="multipart/form-data">
 					<div class="InputTextIc">
 						<i class="fa-solid fa-envelope iconInput"></i>
-						<input type="text" name="logNick" class="InputText" placeholder="Email ou nome de usuario">
+						<input type="text" name="logNick" id="logNick" class="InputText" placeholder="Email ou nome de usuario">
 					</div>
 					<div class="InputTextIc">
 						<i class="fa-solid fa-key iconInput"></i>
-						<input type="password" name="logSenha" minlength="5" maxlength="25" class="InputText" placeholder="Senha">	
+						<input type="password" name="logSenha" id="logSenha" minlength="5" maxlength="25" class="InputText" placeholder="Senha">	
 					</div>
 					<input type="submit" name="VerLog" id="verLog" class="ocultar">
 				</form>
@@ -204,6 +204,7 @@
 				btn.click();
 			}
 		}
+
 		function LogVer(){
 			let btn = document.querySelector("#verLog");
 			btn.click();
@@ -215,14 +216,21 @@
 	if(isset($_POST['UpdateUser'])){
 		$dados = array(
 			$_POST['foto'],//0
-			$_POST['nickname'],//1
-			$_POST['nick'],//2
+			$_POST['nickname'],//1 nome de usuario
+			$_POST['nick'],//2 nome completo
 			$_POST['senha'],//3
 			$_POST['email'],//4
 			$_POST['telefone'],//5
 			$_POST['endereso'],//6
 			$_POST['nacismento']//7
 		);
-		//$_SESSION['user'] = CadUser($dados[2], $dados[1], $dados[4], $dados[7], $dados[6], $dados[3], $dados[5], $dados[0])
+		$_SESSION['user'] = CadUser($dados[1], $dados[2], $dados[4], $dados[7], $dados[6], $dados[3], $dados[5], $link);
+	}
+	if(isset($_POST['VerLog'])){
+		$dados = array(
+			$_POST['logNick'],//0
+			$_POST['logSenha']//1
+		);
+		$_SESSION['user'] = Login($dados[0], $dados[1]);
 	}
 ?>

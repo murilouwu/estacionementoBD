@@ -1,13 +1,13 @@
 <?php 
 session_start();
-/*$db = array(
+$db = array(
             'host'=>'localhost',
             'user'=>'root',
             'pass'=> '',
             'nm'=>'db_estacionamento'
         );
 
-$conn = mysqli_connect($db['host'], $db['user'], $db['pass'], $db['nm']) or die ('Sem Conecção ao database');*/
+$conn = mysqli_connect($db['host'], $db['user'], $db['pass'], $db['nm']) or die ('Sem Conecção ao database');
 
 function mensage($txt){
     echo '<script>alert("'.$txt.'");</script>';
@@ -21,7 +21,8 @@ function CadUser($nm, $nmC, $mail, $date, $end, $pass, $tel, $img){
     if($rows > 0){
         mensage('Nome de usuário e/ou email e/ou telefone já utilizados!');
     }else if($rows == 0){
-        $link = UpFile($img, $nm);
+        $nmF = $nm."-".$mail."Fotos";
+        $link = UpFile($img, $nmF);
         $query = 'INSERT INTO user (nm_nome, nm_name, mail_user, img, dt_nasc, des_endereco, nr_cartão, sl_senha, nr_tel, sl_adm) 
                             VALUES ("'.$nmC.'","'.$nm.'", "'.$mail.'", "'.$link.'","'.$date.'", "'.$end.'", "'.$cad.'","'.$pass.'", "'.$tel.'", false)';
         $res = $GLOBALS['conn']->query($query);
