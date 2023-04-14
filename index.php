@@ -219,19 +219,21 @@
 			$_FILES['foto'],//0
 			$_POST['nickname'],//1 nome de usuario
 			$_POST['nick'],//2 nome completo
-			$_POST['senha'],//3
+			Cripto($_POST['senha']),//3
 			$_POST['email'],//4
 			$_POST['telefone'],//5
 			$_POST['endereso'],//6
 			$_POST['nacismento']//7
 		);
-		//$_SESSION['user'] = CadUser($dados[1], $dados[2], $dados[4], $dados[7], $dados[6], $dados[3], $dados[5], $link);
+		$_SESSION['user'] = CadUser($dados[1], $dados[2], $dados[4], $dados[7], $dados[6], $dados[3], $dados[5], $dados[0]);
+		move('user.php');
 	}
 	if(isset($_POST['VerLog'])){
 		$dados = array(
 			$_POST['logNick'],//0
 			$_POST['logSenha']//1
 		);
-		//$_SESSION['user'] = Login($dados[0], $dados[1]);
+		$_SESSION['user'] = Login($dados[0], $dados[1]);
+		move('user.php');
 	}
 ?>

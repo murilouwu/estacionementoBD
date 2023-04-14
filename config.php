@@ -1,6 +1,6 @@
 <?php 
 session_start();
-/*$db = array(
+$db = array(
             'host'=>'localhost',
             'user'=>'root',
             'pass'=> '',
@@ -8,9 +8,13 @@ session_start();
         );
 
 $conn = mysqli_connect($db['host'], $db['user'], $db['pass'], $db['nm']) or die ('Sem Conecção ao database');
-*/
+
 function mensage($txt){
     echo '<script>alert("'.$txt.'");</script>';
+}
+
+function move($page){
+    header('Location: /'.$page);
 }
 
 function CadUser($nm, $nmC, $mail, $date, $end, $pass, $tel, $img){
@@ -34,19 +38,12 @@ function CadUser($nm, $nmC, $mail, $date, $end, $pass, $tel, $img){
         }
     }
 }
+
 function addAdm($cd, $adm){
     $sql = 'UPDATE user SET adm = '.$adm.' WHERE cd = '.$cd;
     $res = $GLOBALS['con']->query($sql);
     if(!$res){
         mensage("Erro a ADMificar user");
-    }
-}
-
-function deleteUser($cd){
-    $sql = 'DELETE FROM user WHERE cd = '.$cd;
-    $res = $GLOBALS['con']->query($sql);
-    if(!$res){
-        mensage('Erro ao Excluir');
     }
 }
 
@@ -64,13 +61,24 @@ function Login($nm, $pass){
 }
 
 function UpFile($file, $nm){
-    $dir = 'FilesSave/';
+    $dir = 'FilesSave';
     mkdir(__DIR__.'/'.$dir.'/'.$nm.'/', 0777, true);
-    
-    $linkF = $dir.'/'.$nm.'/'.$file['name'];
-    move_uploaded_file($file['tmp_name'], $linkF);
 
-    return($linkF);
+    if($file['tmp_name'] != ''){
+        $path = $file['name'];
+        $ext = pathinfo($path, PATHINFO_EXTENSION);
+        $linkF = $dir.'/'.$nm.'/FotodePerfil'.$ext;
+        move_uploaded_file($file['tmp_name'], $linkF);
+    
+        return($linkF);
+    }else{
+        $Local = [
+            '../imgs/perfilNoImg.png',
+            'FilesSave/'.$nm.'/FotodePerfil.png'
+        ];
+        copy($Local[0], $Local[1]);
+        return $Local[1];
+    }
 }
 
 function HeaderEcho($Title, $css, $logo){
@@ -91,10 +99,19 @@ function HeaderEcho($Title, $css, $logo){
     ';
     echo($res);
 }
+
 function footEcho(){
     $res = '
             </body>
         </html>
     ';
     echo($res);
+}
+
+function Cripto($Pala, $fun){
+    if($fun == 0){
+        return base64_encode($Pala);
+    }else{
+        return base64_decode($Pala)
+    };
 }
