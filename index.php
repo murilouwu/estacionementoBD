@@ -1,7 +1,6 @@
 <?php
 	session_start();
 	include('config.php');
-	HeaderEcho('Dragon Ball Super: Broly','css/vars.css','imgs/logo.png');
 	$usuarios = array(
 	   	array(
 	        "nm_nome" => "Aline Souza Santos",
