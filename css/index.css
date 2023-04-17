@@ -108,7 +108,7 @@ body{
 					padding: 0vh 1vw 0vh 1vw;
 				}
 	.meio{
-		width: 99vw;
+		width: 100vw;
 		display: flex;
 		flex-direction: column;
 		align-items: center;

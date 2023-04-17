@@ -1,0 +1,16 @@
+Está 100% funcional
+é só colocar os arquivos no htdocs
+o banco no localhost/localhost/phpmyadmin
+e colocar no localhost o resto está automático.
+
+* Previamente contas criadas para usar:
+
+ADM:
+	nickname: Satoru
+	email: muriokujo@gmail.com
+	senha: Satorumuriokujo@gmail.comPass
+
+USER:
+	nickname: Sukuna
+	email: Sukuna@gmail.com
+	senha: SukunaSukuna@gmail.comPass

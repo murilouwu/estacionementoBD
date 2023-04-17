@@ -1,0 +1,626 @@
+@import "vars.css";
+
+@keyframes modal{
+	0%{
+		margin-top: -76vh;
+	}
+	100%{
+		margin-top: 10vh;
+	}
+}
+.modal{
+	display: none;
+	width: 49vw;
+	height: 76vh;
+	position: absolute;
+	background-color: white;
+	z-index: 11;
+	margin-top: 10vh;
+	border-radius: 7px;
+	border: 4px solid var(--corC);
+	box-shadow: 0px 0px 50vw 5vw;
+	animation: 0.5s modal linear;
+	flex-direction: column;
+	align-items: center;
+}
+	.modal img{
+		width: 28vw;
+		height: 80vh;
+		position: absolute;
+		margin: 7vh 53vw 0vh 0vw;
+		z-index: 15;
+		filter: drop-shadow(10px -14px 6px var(--corB)) saturate(60%);
+	}
+	.modal .bar{
+		width: 2vw;
+		height: 20vh;
+		background-color: white;
+		margin-top: -17vh;
+		rotate: 341deg;
+		margin-left: -28vw;
+		border: 4px solid var(--corC);
+		border-bottom: none;
+	}
+	.iconMdl2{
+		color: var(--corC);
+		font-size: 5vh;
+		background-color: white;
+		border: 4px solid;
+		padding: 2vh 2vw;
+		border-radius: 4vw;
+		position: absolute;
+		margin: -5vh 0vw 0vh 47vw;
+	}
+		.iconMdl2:hover{
+			cursor: pointer;
+			padding: 3vh 3vw;
+		}
+	.btnsMdl{
+		display: flex;
+		width: 30vw;
+		height: 7vh;
+		margin-top: 5vh;
+		justify-content: space-between;
+		align-items: center;
+	}
+		.btnMdl{
+			width: 14vw;
+			background-color: var(--corC);
+			border: none;
+			border-radius: 2px;
+			padding: 1vh;
+			font-family: "Dbfont";
+			font-size: 3vh;
+			color: white;
+		}
+			.btnMdl:hover{
+				cursor: pointer;
+				box-shadow: 4px 4px 1px 0px var(--corB);
+			}
+	.formsModal{
+		display: flex;
+	}
+		.criar2{
+			display: none;
+			width: 26vw;
+			height: 49vh;
+			padding: 2vh;
+			flex-direction: column;
+			justify-content: space-around;
+			align-items: center;
+		}
+			.criar2 .fotoPerfilInput{
+				display: flex;
+				width: 19vw;
+				height: 17vh;
+				flex-direction: column;
+				align-items: center;
+				justify-content: space-around;
+			}
+				.criar2 .imgMostragem{
+					display: flex;
+					width: 6vw;
+					height: 10vh;
+					background-color: white;
+					border-radius: 50px;
+					background-position: center;
+					background-size: cover;
+					background-repeat: no-repeat;
+				}
+				.criar2 .fotoPerfilInput label{
+					width: 9vw;
+					background-color: var(--corC);
+					border: none;
+					border-radius: 2px;
+					padding: 0.5vh;
+					font-family: cursive;
+					font-size: 2vh;
+					color: white;
+					text-align: center;
+				}
+					.criar2 .fotoPerfilInput label:hover{
+						cursor: pointer;
+						box-shadow: 4px 4px 1px 0px var(--corB);
+					}
+			.criar2 .IntputsTexts{
+				display: flex;
+				width: 30vw;
+				height: 24vh;
+				overflow-y: overlay;
+				overflow-x: hidden;
+				padding: 2vh;
+				box-shadow: 0px 0px 3px var(--corC);
+				flex-direction: column;
+			}
+				.criar2 .InputTextIc{
+					display: flex;
+					flex-direction: row;
+					align-items: center;
+					margin-bottom: 3vh;
+					font-size: 2vh;
+					font-family: cursive;
+					font-weight: bolder;
+				}
+					.criar2 .iconInput{
+						color: var(--corC);
+					}
+					.criar2 .InputText{
+						width: 12vw;
+						margin-left: 1vw;
+						padding-left: 1vw;
+						border: none;
+						font-family: cursive;
+						font-size: 1.5vh;
+						color: var(--corC);
+						font-weight: bold;
+					}
+						.criar2 .InputText:hover{
+							cursor: pointer;
+							border-bottom: 1px solid var(--corC);
+						}
+						.criar2 .InputText:focus{
+							background-color: rgba(0 0 0/ 10%);
+							border-radius: 3px;
+							color: var(--corB);
+						}
+					.criar2 .InputLabel{
+						color: var(--corA);
+						font-size: 1vh;
+						width: 8vw;
+						margin: 0vh 4vw -4vh -12vw;
+					}
+				.criar2 .submitInputUser{
+					width: 21vw;
+					background-color: var(--corC);
+					border: none;
+					border-radius: 2px;
+					padding: 0.5vh;
+					font-family: cursive;
+					font-size: 2vh;
+					color: white;
+					text-align: center;
+					margin-top: 1vh;
+				}
+					.criar2 .submitInputUser:hover{
+						cursor: pointer;
+						box-shadow: 4px 4px 1px 0px var(--corB);
+					}
+body{
+	background-color: var(--corC);
+}
+	.sistem{
+	    overflow-y: overlay;
+	    width: 100vw;
+	    height: 100vh;
+	}
+	.topo{
+		width: 100vw;
+		display: flex;
+		flex-direction: column;
+		height: 18vh;
+		align-items: center;
+	}
+		.head{
+			background-color: var(--corC);
+			height: 9vh;
+			display: flex;
+			flex-direction: row;
+			justify-content: space-around;
+			border-bottom: 2px solid var(--corE);
+			align-items: center;
+			width: 100vw;
+		}
+			.head .Return{
+				background-image: url('../imgs/logo.png'), url('../imgs/logo.png'), url('../imgs/logo.png');
+				height: 9vh;
+				width: 11vw;
+				background-position: 50%, 0%, 100%;
+				background-repeat: no-repeat;
+				background-size: 46%, 43%, 43%;
+			}
+				.head .Return:hover{
+					cursor: pointer;
+					height: 10vh;
+					width: 12vw;
+				}
+			.head .icon{
+				background-color: var(--Invisible);
+				color: var(--corE);
+				font-size: 4vh;
+			}
+				.head .icon:hover{
+					cursor: pointer;
+				}
+			.login{
+				background-color: var(--Invisible);
+				display: flex;
+				flex-direction: row;
+				width: 5%;
+				justify-content: space-around;
+				align-items: center;
+				height: 90%;
+			}
+				.login .Perfil{
+					width: 90%;
+					height: 90%;
+					background-position: center;
+					background-repeat: no-repeat;
+					background-size: cover;
+					border-radius: 10vw;
+					border: 2px solid var(--corE);
+				}
+					.login .Perfil:hover{
+						cursor: pointer;
+					}
+		.menu{
+			z-index: 2;
+			width: 86vw;
+			background: var(--corC);
+			padding: 2vh;
+			border-radius: 0px 0px 2vw 2vw;
+			border: 2px solid var(--corE);
+			justify-content: space-around;
+			margin-top: -2px;
+		}
+			.menu .menuA{
+				text-decoration: none;
+				font-family: 'DbFont';
+				color: var(--corD);
+				font-size: 4vh;
+			}
+				.menu .menuA .linkA{
+					color: var(--corE);
+				}
+				.menu .menuA:hover{
+					border-bottom: 4px solid var(--corE);
+					padding: 0vh 1vw 0vh 1vw;
+				}
+	.main{
+		width: 100vw;
+		height: 70vh;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		overflow-y: overlay;
+	}
+		.main .Plus{
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: space-around;
+			color: var(--corE);
+			width: 74vh;
+			height: auto;
+		}
+			.main .Plus .lbPlus{
+				font-size: 5vh;
+				font-family: 'DbFont';
+			}
+			.main .Plus .icon{
+				font-size: 16vh;
+			}
+				.main .Plus .icon:hover{
+					color: var(--corD);
+					cursor: pointer;
+				}
+			.Srcoll{
+				overflow-x: overlay;
+				display: flex;
+				flex-direction: row;
+				align-items: center;
+				width: 81vw;
+				height: 53vh;
+				background-color: rgb(255 255 255/ 5%);
+				padding-left: 6vh;
+			}
+				.SrcollX{
+					display: flex;
+					flex-direction: row;
+					align-items: center;
+					width: auto;
+					height: 53vh;
+				}
+					.card{
+						height: 47vh;
+						width: 14vw;
+						background-position: center;
+						background-size: cover;
+						background-repeat: no-repeat;
+						display: flex;
+						align-items: end;
+						justify-content: center;
+						margin-right: 4vh;
+					}
+						.card:hover{
+							cursor: pointer;
+							width: 17vw;
+							box-shadow: 0px 0px 3px 2px var(--corB);
+						}
+						.CardTitle{
+							font-size: 3vh;
+							color: var(--corC);
+							font-family: cursive;
+							background-color: var(--corB);
+							padding: 1vh;
+							width: 100%;
+							text-align: center;
+							font-weight: bold;
+						}
+		.Estacionamento{
+			display: none;
+			width: 90vw;
+			height: 60vh;
+			overflow: overlay;
+			background-color: rgb(255 255 255/ 5%);
+			padding: 3vh;
+			flex-direction: column;
+			align-items: self-start;
+		}
+			.iconEsta{
+				color: var(--corC);
+				font-size: 3vh;
+				background-color: white;
+				border: 4px solid;
+				padding: 1vh 1vw;
+				border-radius: 4vw;
+				position: absolute;
+				margin: -7vh 0vw 0vh 42vw;
+			}
+				.iconEsta:hover{
+					cursor: pointer;
+					padding: 1.5vh 1.5vw;
+					margin: -8vh 0vw 0vh 42vw;
+				}
+			.malha{
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				width: auto;
+				height: auto;
+				padding: 2vh;
+			}
+				.malha .icon{
+					color: var(--corE);
+				}
+				.malha .Telao{
+					background-color: var(--corD);
+					width: 60vw;
+					font-size: 7vh;
+					height: 7vh;
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					font-family: 'DbFont';
+					color: var(--corC);
+					border-radius: 2vh;
+				}
+				.malha .linhay{
+					width: auto;
+					height: auto;
+					margin-top: 1vh;
+					margin-bottom: 1vh;
+					display: flex;
+					flex-direction: row;
+					align-items: center;
+				}
+					.malha .linhay .cardx{
+						width: 3vw;
+						height: 6vh;
+						margin-right: 1vw;
+						background-color: var(--corB);
+						border-radius: 7px;
+						font-family: cursive;
+						font-size: 2vh;
+						display: flex;
+						flex-direction: column;
+						align-items: center;
+						justify-content: center;
+						font-weight: bold;
+						border: 3px solid var(--corC);
+						color: var(--corC);
+						background-repeat: no-repeat;
+						background-size: cover;
+						background-position: center;
+					}
+						.malha .linhay .cardx:hover{
+							cursor: pointer;
+							box-shadow: 0px 0px 24px 1px var(--corC);
+						}
+					.malha .linhay .onclock{
+						border: 3px solid var(--corA);
+						color: var(--corA);
+					}
+						.malha .linhay .onclock:hover{
+							cursor: pointer;
+							box-shadow: 0px 0px 24px 1px var(--corA);
+						}
+					.malha .linhay .user{
+						height: 8vh;
+						width: 4vw;
+						border-radius: 5vh;
+						border: 2px solid var(--corE);
+					}
+						.malha .linhay .user:hover{
+							cursor: default;
+							box-shadow: none;
+						}
+					.malha .linhay .cam{
+						height: 16vh;
+						width: 5vw;
+					}
+					.malha .linhay .bus{
+						height: 14vh;
+						width: 4vw;
+					}
+					.malha .linhay .car{
+						height: 8vh;
+						width: 3vw;
+					}
+					.malha .linhay .van{;
+						height: 10vh;
+						width: 4vw;
+					}
+	.left{
+		display: none;
+		width: 34vw;
+		height: 91vh;
+		background-color: white;
+		position: absolute;
+		margin-top: -79vh;
+		padding-left: 2vw;
+		flex-direction: column;
+		align-items: center;
+		justify-content: space-around;
+	}
+		.iconMdl{
+			color: var(--corC);
+			font-size: 5vh;
+			background-color: white;
+			border: 4px solid;
+			padding: 2vh 2vw;
+			border-radius: 4vw;
+			position: absolute;
+			margin: -90vh 0vw 0vh 42vw;
+		}
+			.iconMdl:hover{
+				cursor: pointer;
+				padding: 3vh 3vw;
+			}
+		.forms{
+			display: flex;
+			height: 79vh;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+		}
+			.criar{
+				display: none;
+				width: 31vw;
+				height: 75vh;
+				padding: 2vh;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+			}
+				.criar label{
+					color: var(--corE);
+					font-size: 3vh;
+					width: 32vw;
+					text-align: center;
+					padding: 1vh;
+					font-family: cursive;
+					font-weight: bold;
+					font-style: italic;
+				}
+				.fotoInput{
+					display: flex;
+					width: 23vw;
+					height: 34vh;
+					flex-direction: column;
+					align-items: center;
+					justify-content: space-around;
+				}
+					.imgMostragem{
+						display: flex;
+						width: 13vw;
+						height: 25vh;
+						background-color: rgb(165 165 165);
+						background-position: center;
+						background-size: cover;
+						background-repeat: no-repeat;
+					}
+					.InputImg{
+						width: 9vw;
+						background-color: var(--corC);
+						border: none;
+						border-radius: 2px;
+						padding: 0.5vh;
+						font-family: cursive;
+						font-size: 2vh;
+						color: white;
+						text-align: center;
+					}
+						.InputImg:hover{
+							cursor: pointer;
+							box-shadow: 4px 4px 1px 0px var(--corB);
+						}
+				.IntputsTexts{
+					display: flex;
+					width: 31vw;
+					height: auto;
+					overflow-y: overlay;
+					overflow-x: hidden;
+					padding: 2vh;
+					box-shadow: 0px 0px 3px var(--corC);
+					flex-direction: column;
+				}
+					.IntputsTexts .InputLabel{
+						color: var(--corA);
+						font-size: 2vh;
+						margin: 5vh 22vw 0vh -22vw;
+					}
+					.InputTextIc{
+						display: flex;
+						flex-direction: row;
+						align-items: center;
+						margin-bottom: 3vh;
+						font-size: 2vh;
+						font-family: cursive;
+						font-weight: bolder;
+					}
+						.iconInput{
+							color: var(--corC);
+						}
+						.InputText{
+							width: 100%;
+							margin-left: 1vw;
+							padding-left: 1vw;
+							border: none;
+							font-family: cursive;
+							font-size: 1.5vh;
+							color: var(--corC);
+							font-weight: bold;
+						}
+							.InputText:hover{
+								cursor: pointer;
+								border-bottom: 1px solid var(--corC);
+							}
+							.InputText:focus{
+								background-color: rgba(0 0 0/ 10%);
+								border-radius: 3px;
+								color: var(--corB);
+							}
+						.checklist{
+							margin-left: 2vh;
+							display: flex;
+							width: 21vw;
+							flex-flow: wrap;
+							height: 21vh;
+							padding: 1vh;
+							align-items: center;
+						}
+							.check{
+								display: flex;
+								flex-direction: row;
+								align-items: center;
+								justify-content: center;
+								height: 4vh;
+								margin-right: 2vh;
+							}
+				.inputEnv{
+					width: 21vw;
+					background-color: var(--corC);
+					border: none;
+					border-radius: 2px;
+					padding: 0.5vh;
+					font-family: cursive;
+					font-size: 2vh;
+					color: white;
+					text-align: center;
+					margin-top: 7vh;
+				}
+					.inputEnv:hover{
+						cursor: pointer;
+						box-shadow: 4px 4px 1px 0px var(--corB);
+					}

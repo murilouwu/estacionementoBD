@@ -1,3 +1,37 @@
+//ocultar lista de div
+function mostrar(ocu, chave){
+
+	//loop de ocultamento
+	for (var i=0; i<ocu.length; i++){
+		
+		//enquanto i for menor que a chave
+		if (i<chave){
+			//oculta
+			ocultar(ocu[i], 0);	
+		}else{
+			//mostra
+			ocultar(ocu[i], 1);
+		};
+
+	};
+};
+
+//ocultar one div
+function ocultar(obj, es){
+	
+	//pegar a div
+	let div = document.querySelector(obj);
+	
+	//verificar se quer se ocultado
+	if(es==1){
+		//mostrar
+		div.style.display = 'flex';
+	}else{
+		//ocultar
+		div.style.display = 'none';
+	};
+};
+
 function iconMod(btn, id, fun){
 	let div = document.querySelector(id);
 	if(fun==0){
@@ -93,5 +127,96 @@ function VerData(dt, fun){
 			let result = idade<0?pMens[0]:(idade<idadeMini?pMens[1]:(idade<idadeMax?'':(idade<morto?pMens[2]:pMens[3])));
 			return result;
 		}
+	}
+}
+function red(page){
+	window.location = page;
+}
+
+function MenuLeft(fun){
+	let pos = [
+		['#frm2','#frm3','#frm1', '#MenuLeft'],
+		['#frm1','#frm3','#frm2', '#MenuLeft'],
+		['#frm1','#frm2','#frm3', '#MenuLeft']
+	];
+	mostrar(pos[fun], 2);
+}
+
+function AbrirEstacion(cd, obj){
+	let div = [
+		document.querySelector(obj[0]),//input
+		document.querySelector(obj[1])//submit
+	];
+	div[0].value = cd;
+	div[1].click();
+}
+
+function addCard(bt, fun, div, lat){
+	let esp = document.querySelector(div);
+	if(fun == 0){
+		esp.outerHTML = `
+			<div class="linhay">
+				<div id="mal`+lat+`" style="display: none;"></div>
+				<i class="fa-solid fa-square-plus icon" onclick="addCard(this, 1,'#mal`+lat+`',[`+lat+`, 0])"></i>
+			</div>
+			<div id="mal" style="display: none;"></div>
+		`;
+		bt.setAttribute("onclick", "addCard(this,0,'#mal',"+(lat+1)+")"); 
+	}else{
+		esp.outerHTML = `
+			<div class="cardx onclock" onclick="editVaga(`+lat[0]+`, `+lat[1]+`)">
+				Criar
+			</div>
+			<div id="mal`+lat[0]+`" style="display: none;"></div>
+		`;
+		bt.setAttribute("onclick", "addCard(this, 1,'#mal"+lat[0]+"',["+lat[0]+", "+(lat[1]+1)+"])");
+	}
+}
+
+function editVaga(y, x){
+	MenuLeft(1);
+	let divs = [
+		document.querySelector('#frm2X'),
+		document.querySelector('#frm2Y')
+	];
+	divs[0].value = x;
+	divs[1].value = y;
+}
+
+function editVaga2(cd){
+	let formInput = document.querySelector('#inputB');
+	let formClick = document.querySelector('#submitB');
+	formInput.value = cd;
+	formClick.click();
+}
+
+function AddDate(icon, divs, at){
+	let limit = 5;
+	let sps = [
+		document.querySelector(divs[0]),
+		document.querySelector(divs[1])
+	];
+	sps[0].outerHTML = `
+		<div class="InputTextIc">
+			<i class="fa-solid fa-calendar iconInput"></i>
+			<input type="date" name="date`+at+`" class="InputText">
+			<input type="number" name="PrecoBase`+at+`" class="InputText" placeholder="Preço Base desse dia em R$" min="0" step="0.01">
+			<label class="InputLabel">Data disponivel</label>
+		</div>
+	`;
+	at += 1;
+	if(at<limit){
+		sps[1].innerHTML += `
+			<div class="InputTextIc" id="BasedatePlus">
+				<i class="fa-solid fa-calendar iconInput"></i>
+				<input type="date" name="date`+at+`" class="InputText">
+				<input type="number" name="PrecoBase`+at+`" class="InputText" placeholder="Preço Base desse dia em R$" min="0" step="0.01">
+				<label class="InputLabel">Data disponivel</label>
+				<i class="fa-solid fa-square-plus iconInput" onclick="AddDate(this, ['#BasedatePlus','#inputsFrmDateplus'], `+at+`)"></i>
+			</div>
+		`; 
+		icon.outerHTML = "";
+	}else{
+		alert(limit+' dias tá bom já!!!');
 	}
 }
